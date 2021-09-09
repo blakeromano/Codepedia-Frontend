@@ -8,7 +8,11 @@ interface NavbarProps {
 const Navbar: FunctionComponent<NavbarProps> = (props) => {
   return (
     <>
-    <h1>Navbar!</h1>
+      <nav>
+        <div>
+          <h1>Codepedia</h1>
+        </div>
+      </nav>
     </>
   );
 }
