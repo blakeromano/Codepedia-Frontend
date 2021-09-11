@@ -37,7 +37,7 @@ function App() {
     <>
       <Navbar />
       <Route exact path='/' 
-      render={() => <Home  />}
+      render={() => <Home posts={posts} />}
       />
       <Route exact path='/all' 
       render={() => <Index />}
