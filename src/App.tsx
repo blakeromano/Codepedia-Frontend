@@ -40,7 +40,7 @@ function App() {
       render={() => <Home posts={posts} />}
       />
       <Route exact path='/all' 
-      render={() => <Index />}
+      render={() => <Index posts={posts} />}
       />
       <Route exact path='/new' 
       render={() => <NewPost />}
