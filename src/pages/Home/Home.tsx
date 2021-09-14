@@ -8,7 +8,8 @@ interface Post {
   images: String[],
   videos: String[],
   createdAt: String,
-  updatedAt: String
+  updatedAt: String,
+  _id: string,
 }
 interface HomeProps {
   posts?: Post[]

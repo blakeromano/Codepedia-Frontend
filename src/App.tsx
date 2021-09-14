@@ -18,13 +18,18 @@ interface Post {
   images: String[],
   videos: String[],
   createdAt: String,
-  updatedAt: String
+  updatedAt: String,
+  _id: string,
 }
 
 
 function App() {
 
   const [posts, setPosts] = useState<Post[]>([])
+
+  const newPost = (formData: any) => {
+
+  }
 
   useEffect(() => {
     postServices.index()
