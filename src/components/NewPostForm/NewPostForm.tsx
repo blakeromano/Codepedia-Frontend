@@ -3,10 +3,17 @@ import React, { FunctionComponent, useState } from 'react'
 interface NewPostFormProps {
   
 }
+
+interface formDataType {
+  subject: string,
+  info: string,
+  images: string[],
+  videos: string[],
+}
  
 const NewPostForm: FunctionComponent<NewPostFormProps> = (props) => {
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData]: [formDataType, Function] = useState({
     subject: '',
     info: '',
     images: [],
@@ -20,6 +27,26 @@ const NewPostForm: FunctionComponent<NewPostFormProps> = (props) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+  }
+
+  const handleChangeImage = (idx: number, value: string) => {
+    formData.images.splice(idx, 1, value)
+    setFormData({...formData})
+  }
+
+  const handleChangeVideo = (idx: number, value: string) => {
+    formData.videos.splice(idx, 1, value)
+    setFormData({...formData})
+  }
+
+  const deleteImageInput = (idx: number) => {
+    formData.images.splice(idx, 1)
+    setFormData({...formData})
+  }
+
+  const deleteVideoInput = (idx:number) => {
+    formData.videos.splice(idx, 1)
+    setFormData({...formData})
   }
 
   return (
